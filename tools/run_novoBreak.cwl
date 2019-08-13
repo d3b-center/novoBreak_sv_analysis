@@ -21,7 +21,7 @@ arguments:
       $(inputs.input_normal.path)
       36
       $(inputs.output_basename)/
-      && mv $(inputs.output_basename)/*.vcf $(inputs.output_basename).novoBreak_$(inputs.analysis_type).vcf
+      && mv $(inputs.output_basename)/*.vcf $(inputs.output_basename).novoBreak_somatic.vcf
       
 inputs:
   - id: input_normal
@@ -35,9 +35,6 @@ inputs:
   - id: output_basename
     type: string
     label: Output basename
-  - id: analysis_type
-    type: string
-    label: Type of analysis e.g. somatic, germline
   - id: reference
     type: File
     secondaryFiles: [^.dict, .amb, .ann, .bwt, .pac, .sa]
